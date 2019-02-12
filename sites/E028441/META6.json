@@ -1,0 +1,34 @@
+{
+  "auth": "Write me!",
+  "source-url": "Write me!",
+  "build-depends": [
+    
+  ],
+  "tags": [
+    ""
+  ],
+  "authors": [
+    ""
+  ],
+  "version": "0.0.1",
+  "support": {
+    "source": "Write me!"
+  },
+  "depends": [
+    "Cro::HTTP"
+  ],
+  "name": "sites",
+  "license": "Write me!",
+  "provides": {
+    "Application.pm6": "lib/Application.pm6"
+  },
+  "meta-version": "0",
+  "resources": [
+    
+  ],
+  "test-depends": [
+    
+  ],
+  "description": "Write me!",
+  "perl": "6.*"
+}
