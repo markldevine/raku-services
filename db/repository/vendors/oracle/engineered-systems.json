@@ -1,0 +1,114 @@
+{
+  "caption": "Oracle Engineered Systems Serial Numbers",
+  "tbody": [
+    {
+      "datacenter-grid-location": "XX",
+      "device-type": "Exalogic",
+      "device-name": "CTEL01",
+      "device-model": "X3-2",
+      "serial-number": "AK00126464",
+      "customer-support-identifier": ""
+    },
+    {
+      "datacenter-grid-location": "XX",
+      "device-type": "Exadata",
+      "customer-support-identifier": "",
+      "serial-number": "AK00127133",
+      "device-name": "JGX1",
+      "device-model": "X3-2"
+    },
+    {
+      "datacenter-grid-location": "XX",
+      "customer-support-identifier": "",
+      "serial-number": "AK00127709",
+      "device-name": "CTX1",
+      "device-model": "X3-2",
+      "device-type": "Exadata"
+    },
+    {
+      "datacenter-grid-location": "XX",
+      "device-type": "ZDLRA",
+      "device-name": "JGZ1",
+      "device-model": "X7",
+      "customer-support-identifier": "21810189",
+      "serial-number": "AK00425421"
+    },
+    {
+      "datacenter-grid-location": "XX",
+      "device-type": "ZDLRA",
+      "customer-support-identifier": "21810189",
+      "serial-number": "AK00425423",
+      "device-model": "X7",
+      "device-name": "CTZ1"
+    },
+    {
+      "datacenter-grid-location": "XX",
+      "device-type": "Exadata",
+      "serial-number": "AK00425802",
+      "customer-support-identifier": "21810188",
+      "device-name": "JGX2",
+      "device-model": "X7-2"
+    },
+    {
+      "datacenter-grid-location": "XX",
+      "device-type": "Exadata",
+      "customer-support-identifier": "21810188",
+      "serial-number": "AK00425803",
+      "device-name": "JGX3",
+      "device-model": "X7-2"
+    },
+    {
+      "datacenter-grid-location": "XX",
+      "device-type": "Exadata",
+      "serial-number": "AK00425804",
+      "customer-support-identifier": "21810188",
+      "device-name": "JGX4",
+      "device-model": "X7-2"
+    },
+    {
+      "datacenter-grid-location": "XX",
+      "device-name": "CTX3",
+      "device-model": "X7-2",
+      "customer-support-identifier": "21810188",
+      "serial-number": "AK00425805",
+      "device-type": "Exadata"
+    },
+    {
+      "datacenter-grid-location": "XX",
+      "device-type": "Exadata",
+      "customer-support-identifier": "21810188",
+      "serial-number": "AK00425806",
+      "device-model": "X7-2",
+      "device-name": "CTX4"
+    },
+    {
+      "datacenter-grid-location": "XX",
+      "device-type": "Exadata",
+      "serial-number": "AK00425807",
+      "customer-support-identifier": "21810188",
+      "device-model": "X7-2",
+      "device-name": "CTX2"
+    }
+  ],
+  "tfoot": [],
+  "thead": [
+    {
+      "Serial Number": "serial-number"
+    },
+    {
+      "Model": "device-model"
+    },
+    {
+      "Name": "device-name"
+    },
+    {
+      "Engineered System Type": "device-type"
+    },
+    {
+      "Location": "datacenter-grid-location"
+    },
+    {
+      "Customer Support Identifier": "customer-support-identifier"
+    }
+  ]
+}
