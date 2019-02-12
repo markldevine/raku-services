@@ -1,0 +1,37 @@
+{
+  "caption": "Oracle Advanced Support Gateways",
+  "tbody": [
+    {
+      "system-name": "ct-wmata-01",
+      "application-ip-address": "170.121.15.53",
+      "ilom-ip-address": "170.121.15.52",
+      "default-gateway-ip-address": "170.121.15.1",
+      "default-gateway-netmask": "255.255.255.0"
+    },
+    {
+      "system-name": "ct-wmata-02",
+      "application-ip-address": "170.121.15.51",
+      "ilom-ip-address": "170.121.15.50",
+      "default-gateway-ip-address": "170.121.15.1",
+      "default-gateway-netmask": "255.255.255.0"
+    }
+  ],
+  "tfoot": [],
+  "thead": [
+    {
+      "system-name": "System Name"
+    },
+    {
+      "application-ip-address": "App IP Address"
+    },
+    {
+      "ilom-ip-address": "ILOM IP Address"
+    },
+    {
+      "default-gateway-ip-address": "Dflt G/W IP Address"
+    },
+    {
+      "default-gateway-netmask": "Dflt G/W Netmask"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "caption": "ITIO/DCI/Technical Services Staff",
+  "tbody": [
+    {
+      "member-name": "Jehangir, Syed",
+      "employee-id": "E011092",
+      "internet-email-address": "SJehangir@wmata.com",
+      "desk-telephone": "202/962-1037",
+      "office-location": "JGB/B138/BD-01B",
+      "workstation-barcode": "W-511572",
+      "workstation-ip-address": "10.10.9.243",
+      "workstation-mac-address": "??-??-??-??-??-??"
+    },
+    {
+      "member-name": "Baumgardner, Brian T.",
+      "employee-id": "E014617",
+      "internet-email-address": "btbaumgardner@wmata.com",
+      "desk-telephone": "202/962-5749",
+      "office-location": "JGB/B138",
+      "workstation-barcode": "W-514288",
+      "workstation-ip-address": "10.10.9.239",
+      "workstation-mac-address": "C8-1F-66-B6-F2-37"
+    },
+    {
+      "member-name": "Burdi, Jawaid",
+      "employee-id": "E014742",
+      "internet-email-address": "jburdi@wmata.com",
+      "desk-telephone": "202/962-2885",
+      "office-location": "JGB/B138",
+      "workstation-barcode": "W-514288",
+      "workstation-ip-address": "10.10.8.30",
+      "workstation-mac-address": "??-??-??-??-??-??"
+    },
+    {
+      "member-name": "Devine, Mark L.",
+      "employee-id": "E028441",
+      "internet-email-address": "MLDevine@wmata.com",
+      "desk-telephone": "202/962-2151",
+      "office-location": "JGB/B138/BD-01C",
+      "workstation-barcode": "W-513233",
+      "workstation-ip-address": "10.10.8.62",
+      "workstation-mac-address": "C8-1F-66-B0-E7-A0"
+    },
+    {
+      "member-name": "Raheem, Abdul (Contr)",
+      "employee-id": "C121527",
+      "internet-email-address": "araheem@wmata.com",
+      "desk-telephone": "202/962-2360",
+      "office-location": "JGB/B138",
+      "workstation-barcode": "W-608839",
+      "workstation-ip-address": "10.10.9.247",
+      "workstation-mac-address": "54-BF-64-7A-05-46"
+    },
+    {
+      "member-name": "Shahul Hameed Mohamed, Syed Abuthagir",
+      "employee-id": "E012264",
+      "internet-email-address": "ssm@wmata.com",
+      "desk-telephone": "202/962-2657",
+      "office-location": "JGB/B138",
+      "workstation-barcode": "W-605725",
+      "workstation-ip-address": "10.10.9.246",
+      "workstation-mac-address": "??-??-??-??-??-??"
+    },
+    {
+      "member-name": "Vahora, Atiq H.",
+      "employee-id": "E028332",
+      "internet-email-address": "AHVahora@wmata.com",
+      "desk-telephone": "202/962-2383",
+      "office-location": "JGB/B138/BD-01C",
+      "workstation-barcode": "W-514315",
+      "workstation-ip-address": "10.10.9.238",
+      "workstation-mac-address": "E8-B1-FC-EB-A7-F2"
+    },
+    {
+      "member-name": "Vonteddu, Kiran (Contr)",
+      "employee-id": "C113757",
+      "internet-email-address": "kvonteddu@wmata.com",
+      "desk-telephone": "202/962-2094",
+      "office-location": "JGB/B138",
+      "workstation-barcode": "W-513584",
+      "workstation-ip-address": "10.10.52.41",
+      "workstation-mac-address": "??-??-??-??-??-??"
+    }
+  ],
+  "tfoot": [],
+  "thead": [
+    {
+      "member-name": "Team Member"
+    },
+    {
+      "employee-id": "Employee ID"
+    },
+    {
+      "internet-email-address": "Internet Email"
+    },
+    {
+      "desk-telephone": "Desk Telephone"
+    },
+    {
+      "office-location": "Office"
+    },
+    {
+      "workstation-barcode": "Workstation Barcode"
+    },
+    {
+      "workstation-ip-address": "Workstation IP"
+    },
+    {
+      "workstation-mac-address": "Workstation MAC"
+    }
+  ]
+}

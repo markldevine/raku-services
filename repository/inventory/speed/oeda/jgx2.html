@@ -1,0 +1,2860 @@
+<html lang="en" xmlns:date="http://www.oracle.com/XSL/Transform/java/java.util.Date" xmlns:locObj="http://www.oracle.com/XSL/Transform/java/java.util.Locale" xmlns:fmt="http://www.oracle.com/XSL/Transform/java/java.text.Format" xmlns:dateFmt="http://www.oracle.com/XSL/Transform/java/java.text.DateFormat" xmlns:simpleFmt="http://www.oracle.com/XSL/Transform/java/java.text.SimpleDateFormat">
+   <head>
+      <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style>
+		table{
+			font-size:14px;
+		}
+
+		table.maintable{
+			margin: 0 auto;
+			padding: 0px;
+			text-align:center;
+			border:0px;
+			position: relative;
+		}
+
+		table.node{
+			margin-top:10px;
+			border-collapse:collapse;
+			border: 1px solid black;
+			border-style:solid;
+			border-color:#C0C0C0;
+			text-align: center;
+		}
+
+		table.info{
+            margin: 0 auto;
+            text-align:center;
+		}
+
+		table.node tr:nth-child(odd){
+			background:#F8F8F8;
+		}
+
+		table.node tr:nth-child(even){
+			background-color: #fff;
+		}
+
+		th.node,td.node{
+			border: 1px solid black;
+			border-color:#C0C0C0;
+			align:center;
+            width: 11%;
+		}
+  th.node {
+      padding: 8px;
+      font-size:16px;
+  }
+
+
+  table.data tr:nth-child(odd) td{background:#ffffff;}
+  table.data tr:nth-child(even) td{background-color: #c8c8c8;}
+  .oddData{
+    background-color:#ffffff;
+  }
+  .evenData{
+    background-color: #c8c8c8;
+  }
+
+  .vmData{
+    background-color: #e0e0e0;
+  }
+
+  .titletd{
+     font-size: 20pt;
+     color: white;
+  }
+
+		.titlebox{
+			margin:-20px 0 0 0px;
+			background:#fff;
+			font: italic;
+			font-size: 150%;
+			color: #0000FF;
+		}
+
+		.lineColor{
+			background-color: rgb(210, 216, 176);
+		}
+
+		.head1 {
+			color: rgb(51, 102, 153);
+			font-size: 14pt;
+			margin-bottom: 0px;
+			padding-bottom: 2px;
+			font-weight: bold;
+			border-bottom: 1px solid rgb(210, 216, 176);
+		}
+
+		.head2 {
+			color: rgb(51, 102, 153);
+			margin-bottom: 1px;
+			font-weight: bold;
+			font-size: 11pt;
+			padding-bottom: 2px;
+			border-bottom: 1px solid rgb(210, 216, 176);
+		}
+
+		.head3 {
+			color: rgb(51, 102, 153);
+			margin-bottom: 0px;
+			font-weight: bold;
+			font-size: 10pt;
+		}
+
+  .head4 {
+  color: rgb(51, 102, 153);
+  font-size: 12pt;
+  margin-bottom: 0px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  }
+
+  .hide{
+     visibility: hidden;
+
+     }
+
+		A:link { COLOR: blue; TEXT-DECORATION: none; font-weight: normal }
+		A:visited { COLOR: blue; TEXT-DECORATION: none; font-weight: normal }
+		A:active { COLOR: blue; TEXT-DECORATION: none }
+		A:hover { COLOR: red; TEXT-DECORATION: none; font-weight: normal }
+
+		.groups
+		{
+			margin-top:5px;
+			border-collapse:collapse;
+			border-width: 2px;
+			border-style:solid;
+			border-right-style: dotted;
+			border-left-style: dotted;
+			border-color: rgb(210, 216, 176);
+			text-align: center;
+		}
+		.groups tr, .groups td, .groups th{
+			border-width: 1px;
+			border-style:dotted;
+			border-color:#C0C0C0;
+			align:center;
+		}
+
+  .line{
+      margin-top: 2px;
+      margin-botton: 2px;
+      border-top: 1px dotted  #C0C0C0;
+      width: 90%;
+  }
+
+		.usergroups
+		{
+			width: 100%;
+			border-collapse:collapse;
+			border-style: none;
+			text-align: center;
+		}
+		.usergroups tr, .usergroups td{
+			border-width: 1px;
+			border-style:none;
+			border-left-style:dotted;
+			border-color:#C0C0C0;
+			align:center;
+		}
+		.usergroups th{
+			border-width: 1px;
+			border-style:none;
+			align:center;
+		}
+
+  .generalInfo td{
+      border-width: 1px;
+      align: center;
+      border-style: none;
+      border-bottom-style: dotted;
+      border-color: #C0C0C0;
+  }
+
+  .sectionTitle{
+    font-weight: bold;
+    font-size: 16pt;
+  }
+  .endSectionTitle{
+    font-size: 5pt;
+
+  }
+
+  .endSectionNormalTitle{
+     font-size: 12pt;
+  }
+
+		.grouphead{
+			border-bottom: 1px dotted #C0C0C0;
+		}
+
+  .lineTop{
+      border-top: 1px dotted  #C0C0C0;
+  }
+
+  .soldLineTop{
+    border-top: 3px solid  #C0C0C0;
+  }
+
+ .imgindent{
+      padding-left: 15px;
+ }
+
+ #footer{
+     border-top: 1px solid #000000;
+     border-bottom: 1px solid #000000;
+     padding: 5px 0 5px 0;
+     text-align: left;
+     width: 100%;
+ }
+
+ td.dataNoWrap{
+      white-space: nowrap;
+      align: left;
+ }
+ td.lableNoWrap{
+     white-space: nowrap;
+     align: right;
+ }
+
+ .timeText
+ {
+  text-align: right;
+  color: rgb(51, 102, 153);
+  padding-right: 40px;
+  font-size: 10pt;
+ }
+
+ .verText
+ {
+  text-align: right;
+  color: rgb(51, 102, 153);
+  font-size: 10pt;
+ }
+
+ @media print
+ {
+     table {font-size:10px;}
+     table.maintable {text-align:center;font-size:10px;}
+     th.node {padding: 4px;font-size:12px; white-space:normal}
+     td.dataNoWrap{ white-space: normal; align: left;}
+     td.lableNoWrap td{white-space: normal; align: right;}
+ }
+ @page{
+     margin-left: 0.1cm !important;
+     margin-right: 0.1cm !important;
+ }
+
+    </style>
+</head>
+   <body>
+      <table class="maintable" width="100%" role="presentation">
+         <tr>
+            <td><img src="http://www.oracle.com/ocom/groups/public/@otn/documents/webcontent/1418324.png" alt="Oracle Corporation" moz-do-not-send="true" align="left">
+               <h3 class="timeText">Jul 24, 2018 5:43 PM, EDT<br>Generated by OEDA v180614</h3>
+            </td>
+         </tr>
+         <tr>
+            <td class="titletd" colspan="2" align="center" bgcolor="red">
+        Installation Template
+       </td>
+         </tr>
+         <tr>
+            <td>
+               <div style="padding-top: 10px"></div>
+               <table class="info" cellspacing="0" cellpadding="0" summary="General Information">
+                  <tr class="generalInfo">
+                     <td nowrap align="right" scope="row"><i>Customer Name</i>
+                     </td>
+                     <td>&nbsp;:&nbsp;&nbsp;</td>
+                     <td align="center"><b>WMATA</b>
+                     </td>
+                  </tr>
+                  <tr class="generalInfo">
+                     <td nowrap align="right" scope="row"><i>Application</i>
+                     </td>
+                     <td>&nbsp;:&nbsp;&nbsp;</td>
+                     <td align="center"><b>jgx2</b>
+                     </td>
+                  </tr>
+                  <tr class="generalInfo">
+                     <td nowrap align="right" scope="row"><i>Name Prefix</i>
+                     </td>
+                     <td>&nbsp;:&nbsp;&nbsp;</td>
+                     <td align="center"><b>jgx2</b>
+                     </td>
+                  </tr>
+                  <tr class="generalInfo">
+                     <td nowrap align="right" scope="row"><i>Network Domain</i>
+                     </td>
+                     <td>&nbsp;:&nbsp;&nbsp;</td>
+                     <td align="center"><b>wmata.com<br/></b>
+                     </td>
+                  </tr>
+                  <tr class="generalInfo">
+                     <td nowrap align="right" scope="row"><i>DNS Servers</i>
+                     </td>
+                     <td>&nbsp;:&nbsp;&nbsp;</td>
+                     <td align="center"><b>10.10.43.40<br/>10.11.43.40<br/></b>
+                     </td>
+                  </tr>
+                  <tr class="generalInfo">
+                     <td nowrap align="right" scope="row"><i>NTP Servers</i>
+                     </td>
+                     <td>&nbsp;:&nbsp;&nbsp;</td>
+                     <td align="center"><b>10.10.110.10<br/>10.10.110.11<br/>10.11.110.10<br/></b>
+                     </td>
+                  </tr>
+                  <tr class="generalInfo">
+                     <td nowrap align="right" scope="row"><i>Compute Node Default Gateway</i>
+                     </td>
+                     <td>&nbsp;:&nbsp;&nbsp;</td>
+                     <td align="center"><b>10.10.103.1<br/></b>
+                     </td>
+                  </tr>
+                  <tr class="generalInfo">
+                     <td nowrap align="right" scope="row"><i>Timezone</i>
+                     </td>
+                     <td>&nbsp;:&nbsp;&nbsp;</td>
+                     <td align="center"><b>America/New_York</b>
+                     </td>
+                  </tr>
+                  <tr class="generalInfo">
+                     <td nowrap align="right" scope="row"><i>Comments</i>
+                     </td>
+                     <td>&nbsp;:&nbsp;&nbsp;</td>
+                     <td align="left"><b>Q1 : As part of the deployment, Oracle always installs the latest Exadata Storage software. This means that different machines could have different versions of the Storage software even if they are deployed around the same time. An example of the difference between machines would be the Kernel version that is installed. Please review the Exadata Storage software version to be deployed with the Engineer during the planning phase of the deployment. Note for VM's UEK2 and UEK4 can not be mixed. Dom0 needs to be equal or higher than DomU. Please indicate desired OS image.<br/>A1 : The latest Exadata Storage software OS image version.<br/>Q2 : If you are using 10G Optical, do you have existing certified SFP Modules that you can use? if not, when do you plan to order them?<br/>A2 : Yes (this was discussed with NCS)<br/>Q3 : Will this machine be multi-racked connected over infiniband to another engineered system? If so, please indicate additional machines.<br/>A3 : No<br/>Q3a: If this machine is multi-racked, have you ensured that the InfiniBand IPs do not overlap and that they are in the proper subnet?<br/>A3a: N/A<br/>Q3b: If this machine is multi-racked, is an InfiniBand Listener needed for SQL communication on the InfiniBand fabric?<br/>A3b: N/A<br/>Q4 : If requesting LACP, will bond options be different than default? If so, please specify the bond options.<br/>A4 : No, we are using the default.<br/>Q5 : Have you ensured that the private IB subnet does not overlap the other networks (client, mgmt, backup)?<br/>A5 : Yes<br/>Q6 : Are additional Database homes needed? If so, please provide details (directory, version, instance)<br/>A6 : /u01/app/oracle/product/12.2.0.1/dbhome_1 - 12.2.0.1 RU180417<br/> /u01/app/oracle/product/12.1.0.2/dbhome_1 - 12.1.0.2 DBBP180417<br/>Q7 : If this a DR machine, have you ensured the RDBMS version matches the production version?<br/>A7 : N/A for systems in JGB<br/>Q8 : For a rack upgrade/expansion, should the ASM diskgroups be extended or new diskgroups created?<br/>A8 : N/A<br/>Q9 : Are additional diskgroups beyond the standard provided required? If so, please provide details<br/>A9 : No<br/>Q10: Will the database nodes use LDAP servers for hostname or IP resolution or User security? If so, have you confirmed the UID/GID's are matching?<br/>A10:<br/>Q11: "Will Spanning Tree Protocol need to be disabled on the uplink port?"<br/>A11: Spanning Tree Protocol needs to be disabled on the uplink port of Exadata/ZDLRA.<br/>Additional Comments :<br/></b>
+                     </td>
+                  </tr>
+               </table>
+               <div style="padding-top: 5px"></div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                  <tr>
+                     <td colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td class="soldLineTop" colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="60%" cellspacing="0" cellpadding="0" summary="General information of management network">
+                           <tr>
+                              <td align="left" nowrap scope="row">
+                                 <h1><span class="sectionTitle">
+   Management Network Configuration
+  </span>
+                                 </h1><span class="endSectionTitle"><br>&nbsp;</span>
+                              </td>
+                              <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                              <td nowrap>
+     All IP addresses and corresponding host names should be registered in DNS
+   
+     <br/>The Admin network defines the hostname and default gateway
+     for all Storage nodes
+   <br/>
+       The Admin network defines the hostname for all Compute nodes
+     <span class="endSectionTitle"><br>&nbsp;</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Starting IP Address</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10.10.108.61</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Subnet Mask</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>255.255.255.0</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Gateway</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10.10.108.1</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Total IP Addresss</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>28</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Ending IP Address</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10.10.108.88</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Admin Network Type</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>1/10Gbit Copper Non-Bonded</b>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td><span style="padding-left: 30px;">&nbsp;</span>
+                              </td>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                                    <tr>
+                                       <td>
+                                          <table width="90%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                                             <tr>
+                                                <td>
+                                                   <h2 class="head2">Server Components</h2>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>
+                                                   <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="Database and storage nodes management network information">
+                                                      <tr>
+                                                         <th align="left" scope="col">Rack U Location</th>
+                                                         <th align="left" scope="col">Component</th>
+                                                         <th align="left" scope="col">NET0 Name</th>
+                                                         <th align="left" scope="col">NET0 IP Address</th>
+                                                         <th align="left" scope="col">ILOM Name</th>
+                                                         <th align="left" scope="col">ILOM IP Address</th>
+                                                         <th align="left" scope="col">VLAN ID</th>
+                                                      </tr>
+                                                      <tr>
+                                                         <td colspan="7" style="background:#9c9c9c; font-weight:bold;" scope="row">X7-2 Half Rack HC 10TB</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">19</td>
+                                                         <td class="oddData">Database Server</td>
+                                                         <td class="oddData">jgx2dbadm04</td>
+                                                         <td class="oddData">10.10.108.64</td>
+                                                         <td class="oddData">jgx2dbadm04-ilom</td>
+                                                         <td class="oddData">10.10.108.75</td>
+                                                         <td class="oddData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">18</td>
+                                                         <td class="evenData">Database Server</td>
+                                                         <td class="evenData">jgx2dbadm03</td>
+                                                         <td class="evenData">10.10.108.63</td>
+                                                         <td class="evenData">jgx2dbadm03-ilom</td>
+                                                         <td class="evenData">10.10.108.74</td>
+                                                         <td class="evenData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">17</td>
+                                                         <td class="oddData">Database Server</td>
+                                                         <td class="oddData">jgx2dbadm02</td>
+                                                         <td class="oddData">10.10.108.62</td>
+                                                         <td class="oddData">jgx2dbadm02-ilom</td>
+                                                         <td class="oddData">10.10.108.73</td>
+                                                         <td class="oddData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">16</td>
+                                                         <td class="evenData">Database Server</td>
+                                                         <td class="evenData">jgx2dbadm01</td>
+                                                         <td class="evenData">10.10.108.61</td>
+                                                         <td class="evenData">jgx2dbadm01-ilom</td>
+                                                         <td class="evenData">10.10.108.72</td>
+                                                         <td class="evenData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">14</td>
+                                                         <td class="oddData">Storage Server</td>
+                                                         <td class="oddData">jgx2celadm07</td>
+                                                         <td class="oddData">10.10.108.71</td>
+                                                         <td class="oddData">jgx2celadm07-ilom</td>
+                                                         <td class="oddData">10.10.108.82</td>
+                                                         <td class="oddData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">12</td>
+                                                         <td class="evenData">Storage Server</td>
+                                                         <td class="evenData">jgx2celadm06</td>
+                                                         <td class="evenData">10.10.108.70</td>
+                                                         <td class="evenData">jgx2celadm06-ilom</td>
+                                                         <td class="evenData">10.10.108.81</td>
+                                                         <td class="evenData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">10</td>
+                                                         <td class="oddData">Storage Server</td>
+                                                         <td class="oddData">jgx2celadm05</td>
+                                                         <td class="oddData">10.10.108.69</td>
+                                                         <td class="oddData">jgx2celadm05-ilom</td>
+                                                         <td class="oddData">10.10.108.80</td>
+                                                         <td class="oddData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">8</td>
+                                                         <td class="evenData">Storage Server</td>
+                                                         <td class="evenData">jgx2celadm04</td>
+                                                         <td class="evenData">10.10.108.68</td>
+                                                         <td class="evenData">jgx2celadm04-ilom</td>
+                                                         <td class="evenData">10.10.108.79</td>
+                                                         <td class="evenData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">6</td>
+                                                         <td class="oddData">Storage Server</td>
+                                                         <td class="oddData">jgx2celadm03</td>
+                                                         <td class="oddData">10.10.108.67</td>
+                                                         <td class="oddData">jgx2celadm03-ilom</td>
+                                                         <td class="oddData">10.10.108.78</td>
+                                                         <td class="oddData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">4</td>
+                                                         <td class="evenData">Storage Server</td>
+                                                         <td class="evenData">jgx2celadm02</td>
+                                                         <td class="evenData">10.10.108.66</td>
+                                                         <td class="evenData">jgx2celadm02-ilom</td>
+                                                         <td class="evenData">10.10.108.77</td>
+                                                         <td class="evenData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">2</td>
+                                                         <td class="oddData">Storage Server</td>
+                                                         <td class="oddData">jgx2celadm01</td>
+                                                         <td class="oddData">10.10.108.65</td>
+                                                         <td class="oddData">jgx2celadm01-ilom</td>
+                                                         <td class="oddData">10.10.108.76</td>
+                                                         <td class="oddData"></td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                          <table width="90%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                                             <tr>
+                                                <td>
+                                                   <h2 class="head2">Switch and Power Components </h2>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>
+                                                   <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="management network information for switch and power">
+                                                      <tr>
+                                                         <th align="left" scope="col">Rack U Location</th>
+                                                         <th align="left" scope="col">Component</th>
+                                                         <th align="left" scope="col">Admin Name</th>
+                                                         <th align="left" scope="col">Admin IP Address</th>
+                                                      </tr>
+                                                      <tr>
+                                                         <td colspan="4" style="background:#9c9c9c; font-weight:bold;" scope="row">X7-2 Half Rack HC 10TB</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">22</td>
+                                                         <td class="oddData">Leaf Switch</td>
+                                                         <td class="oddData">jgx2sw-ibb01</td>
+                                                         <td class="oddData">10.10.108.85</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">21</td>
+                                                         <td class="evenData">Admin Switch</td>
+                                                         <td class="evenData">jgx2sw-adm01</td>
+                                                         <td class="evenData">10.10.108.83</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">20</td>
+                                                         <td class="oddData">Leaf Switch</td>
+                                                         <td class="oddData">jgx2sw-iba01</td>
+                                                         <td class="oddData">10.10.108.84</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">1</td>
+                                                         <td class="evenData">Spine Switch</td>
+                                                         <td class="evenData">jgx2sw-ibs01</td>
+                                                         <td class="evenData">10.10.108.88</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">0</td>
+                                                         <td class="oddData">PDU Switch</td>
+                                                         <td class="oddData">jgx2sw-pdua01</td>
+                                                         <td class="oddData">10.10.108.86</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">0</td>
+                                                         <td class="evenData">PDU Switch</td>
+                                                         <td class="evenData">jgx2sw-pdub01</td>
+                                                         <td class="evenData">10.10.108.87</td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                  <tr>
+                     <td colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td class="soldLineTop" colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="60%" cellspacing="0" cellpadding="0" summary="General information of client network">
+                           <tr>
+                              <td align="left" nowrap scope="row">
+                                 <h1><span class="sectionTitle">Client Access Network Configuration</span>
+                                 </h1><span class="endSectionTitle"><br>&nbsp;</span>
+                              </td>
+                              <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                              <td nowrap>
+    All IP addresses and corresponding host names should be registered in DNS
+   <br/>
+       The Client network defines the default gateway for all Compute
+       nodes
+     <span class="endSectionTitle"><br>&nbsp;</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Starting IP Address</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10.10.103.21</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Subnet Mask</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>255.255.255.0</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Gateway</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10.10.103.1</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Total IP Addresses</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>11</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Ending IP Addresses</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10.10.103.31</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Client Network Type</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>RJ45/SFP28 Combined on Motherboard: [LinkSpeed : 10000 OPTICAL] Bonded</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Network Speed</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10000</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>LACP</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>
+     <br/>
+     Enabled, please ensure switches support LACP and
+     configured for LACP and aggregation <br/>
+     BONDING_OPTS="mode=4 miimon=100 downdelay=200 updelay=200 num_grat_arp=100 lacp_rate=1 xmit_hash_policy=layer3+4"
+   </b>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                           <tr>
+                              <td><span style="padding-left: 30px;">&nbsp;</span>
+                              </td>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                                    <tr>
+                                       <td>
+                                          <table width="90%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                                             <tr>
+                                                <td>
+                                                   <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="Client network information">
+                                                      <tr>
+                                                         <th align="left" scope="col">Rack U Location</th>
+                                                         <th align="left" scope="col">Component</th>
+                                                         <th align="left" scope="col">Client Name</th>
+                                                         <th align="left" scope="col">Client IP Address</th>
+                                                         <th align="left" scope="col">VIP Name</th>
+                                                         <th align="left" scope="col">VIP IP Address</th>
+                                                         <th align="left" scope="col">VLAN ID</th>
+                                                      </tr>
+                                                      <tr>
+                                                         <td colspan="7" style="background:#9c9c9c; font-weight:bold;" scope="row">X7-2 Half Rack HC 10TB</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">19</td>
+                                                         <td class="oddData">Database Server</td>
+                                                         <td class="oddData">jgx2db04</td>
+                                                         <td class="oddData">10.10.103.27</td>
+                                                         <td class="oddData">jgx2db04-vip</td>
+                                                         <td class="oddData">10.10.103.28</td>
+                                                         <td class="oddData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">18</td>
+                                                         <td class="evenData">Database Server</td>
+                                                         <td class="evenData">jgx2db03</td>
+                                                         <td class="evenData">10.10.103.25</td>
+                                                         <td class="evenData">jgx2db03-vip</td>
+                                                         <td class="evenData">10.10.103.26</td>
+                                                         <td class="evenData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">17</td>
+                                                         <td class="oddData">Database Server</td>
+                                                         <td class="oddData">jgx2db02</td>
+                                                         <td class="oddData">10.10.103.23</td>
+                                                         <td class="oddData">jgx2db02-vip</td>
+                                                         <td class="oddData">10.10.103.24</td>
+                                                         <td class="oddData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">16</td>
+                                                         <td class="evenData">Database Server</td>
+                                                         <td class="evenData">jgx2db01</td>
+                                                         <td class="evenData">10.10.103.21</td>
+                                                         <td class="evenData">jgx2db01-vip</td>
+                                                         <td class="evenData">10.10.103.22</td>
+                                                         <td class="evenData"></td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>&nbsp;</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                  <tr>
+                     <td colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td class="soldLineTop" colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="60%" cellspacing="0" cellpadding="0" summary="General information of private InfiniBand network">
+                           <tr>
+                              <td align="left" nowrap scope="row">
+                                 <h1><span class="sectionTitle">
+   Private InfiniBand Network Configuration
+  </span>
+                                 </h1><span class="endSectionTitle"><br>&nbsp;</span>
+                              </td>
+                              <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                              <td nowrap><span style="padding-left: 300px">&nbsp;</span><span class="endSectionTitle"><br>&nbsp;</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Starting IP Address</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>192.168.10.1</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Subnet Mask</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>255.255.252.0</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Total IP Addresses</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>22</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Ending IP Address</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>192.168.10.22</b>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td><span style="padding-left: 30px;">&nbsp;</span>
+                              </td>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                                    <tr>
+                                       <td>
+                                          <table width="90%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                                             <tr>
+                                                <td>
+                                                   <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="Private network information">
+                                                      <tr>
+                                                         <th align="left" scope="col">Rack U Location</th>
+                                                         <th align="left" scope="col">Component</th>
+                                                         <th align="left" scope="col">BONDIB0 Name
+        </th>
+                                                         <th align="left" scope="col">BONDIB0 IP Address</th>
+                                                      </tr>
+                                                      <tr>
+                                                         <td colspan="6" style="background:#9c9c9c; font-weight:bold;" scope="row">X7-2 Half Rack HC 10TB</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">19</td>
+                                                         <td class="oddData">Database Server</td>
+                                                         <td class="oddData">jgx2db04-priv1</td>
+                                                         <td class="oddData">192.168.10.7</td>
+                                                         <tr>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData" scope="row">jgx2db04-priv2</td>
+                                                            <td class="oddData">192.168.10.8</td>
+                                                         </tr>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">18</td>
+                                                         <td class="evenData">Database Server</td>
+                                                         <td class="evenData">jgx2db03-priv1</td>
+                                                         <td class="evenData">192.168.10.5</td>
+                                                         <tr>
+                                                            <td class="evenData"></td>
+                                                            <td class="evenData"></td>
+                                                            <td class="evenData" scope="row">jgx2db03-priv2</td>
+                                                            <td class="evenData">192.168.10.6</td>
+                                                         </tr>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">17</td>
+                                                         <td class="oddData">Database Server</td>
+                                                         <td class="oddData">jgx2db02-priv1</td>
+                                                         <td class="oddData">192.168.10.3</td>
+                                                         <tr>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData" scope="row">jgx2db02-priv2</td>
+                                                            <td class="oddData">192.168.10.4</td>
+                                                         </tr>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">16</td>
+                                                         <td class="evenData">Database Server</td>
+                                                         <td class="evenData">jgx2db01-priv1</td>
+                                                         <td class="evenData">192.168.10.1</td>
+                                                         <tr>
+                                                            <td class="evenData"></td>
+                                                            <td class="evenData"></td>
+                                                            <td class="evenData" scope="row">jgx2db01-priv2</td>
+                                                            <td class="evenData">192.168.10.2</td>
+                                                         </tr>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">14</td>
+                                                         <td class="oddData">Storage Server</td>
+                                                         <td class="oddData">jgx2cel07-priv1</td>
+                                                         <td class="oddData">192.168.10.21</td>
+                                                         <tr>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData" scope="row">jgx2cel07-priv2</td>
+                                                            <td class="oddData">192.168.10.22</td>
+                                                         </tr>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">12</td>
+                                                         <td class="evenData">Storage Server</td>
+                                                         <td class="evenData">jgx2cel06-priv1</td>
+                                                         <td class="evenData">192.168.10.19</td>
+                                                         <tr>
+                                                            <td class="evenData"></td>
+                                                            <td class="evenData"></td>
+                                                            <td class="evenData" scope="row">jgx2cel06-priv2</td>
+                                                            <td class="evenData">192.168.10.20</td>
+                                                         </tr>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">10</td>
+                                                         <td class="oddData">Storage Server</td>
+                                                         <td class="oddData">jgx2cel05-priv1</td>
+                                                         <td class="oddData">192.168.10.17</td>
+                                                         <tr>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData" scope="row">jgx2cel05-priv2</td>
+                                                            <td class="oddData">192.168.10.18</td>
+                                                         </tr>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">8</td>
+                                                         <td class="evenData">Storage Server</td>
+                                                         <td class="evenData">jgx2cel04-priv1</td>
+                                                         <td class="evenData">192.168.10.15</td>
+                                                         <tr>
+                                                            <td class="evenData"></td>
+                                                            <td class="evenData"></td>
+                                                            <td class="evenData" scope="row">jgx2cel04-priv2</td>
+                                                            <td class="evenData">192.168.10.16</td>
+                                                         </tr>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">6</td>
+                                                         <td class="oddData">Storage Server</td>
+                                                         <td class="oddData">jgx2cel03-priv1</td>
+                                                         <td class="oddData">192.168.10.13</td>
+                                                         <tr>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData" scope="row">jgx2cel03-priv2</td>
+                                                            <td class="oddData">192.168.10.14</td>
+                                                         </tr>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">4</td>
+                                                         <td class="evenData">Storage Server</td>
+                                                         <td class="evenData">jgx2cel02-priv1</td>
+                                                         <td class="evenData">192.168.10.11</td>
+                                                         <tr>
+                                                            <td class="evenData"></td>
+                                                            <td class="evenData"></td>
+                                                            <td class="evenData" scope="row">jgx2cel02-priv2</td>
+                                                            <td class="evenData">192.168.10.12</td>
+                                                         </tr>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">2</td>
+                                                         <td class="oddData">Storage Server</td>
+                                                         <td class="oddData">jgx2cel01-priv1</td>
+                                                         <td class="oddData">192.168.10.9</td>
+                                                         <tr>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData"></td>
+                                                            <td class="oddData" scope="row">jgx2cel01-priv2</td>
+                                                            <td class="oddData">192.168.10.10</td>
+                                                         </tr>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>&nbsp;</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                  <tr>
+                     <td colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td class="soldLineTop" colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="60%" cellspacing="0" cellpadding="0" summary="General information of backup network">
+                           <tr>
+                              <td align="left" nowrap scope="row">
+                                 <h1><span class="sectionTitle">Backup Network Configuration</span>
+                                 </h1><span class="endSectionTitle"><br>&nbsp;</span>
+                              </td>
+                              <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                              <td nowrap><span style="padding-left: 300px">&nbsp;</span><span class="endSectionTitle"><br>&nbsp;</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Starting IP Address</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10.10.106.21</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Subnet Mask</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>255.255.255.0</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Gateway</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10.10.106.1</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Total IP Addresses</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>4</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Ending IP Address</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10.10.106.24</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Backup Network Type</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>SFP28 PCI Dual Port Card: [LinkSpeed : 10000 OPTICAL] Bonded</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>Network Speed</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>10000</b>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td nowrap align="right" scope="row"><i>LACP</i>
+                              </td>
+                              <td>&nbsp;:&nbsp;&nbsp;</td>
+                              <td align="left"><b>
+     <br/>
+     Enabled, please ensure switches support LACP and
+     configured for LACP and aggregation <br/>
+     BONDING_OPTS="mode=4 miimon=100 downdelay=200 updelay=200 num_grat_arp=100 lacp_rate=1 xmit_hash_policy=layer3+4"
+   </b>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td><span style="padding-left: 30px;">&nbsp;</span>
+                              </td>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                                    <tr>
+                                       <td>
+                                          <table width="90%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                                             <tr>
+                                                <td>
+                                                   <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="Backup network information">
+                                                      <tr>
+                                                         <th align="left" scope="col">Rack U Location</th>
+                                                         <th align="left" scope="col">Component</th>
+                                                         <th align="left" scope="col">Backup Name</th>
+                                                         <th align="left" scope="col">Backup IP Address</th>
+                                                         <th align="left" scope="col">Backup VIP Name</th>
+                                                         <th align="left" scope="col">Backup VIP Address</th>
+                                                         <th align="left" scope="col">VLAN ID</th>
+                                                      </tr>
+                                                      <tr>
+                                                         <td colspan="7" style="background:#9c9c9c; font-weight:bold;" scope="row">X7-2 Half Rack HC 10TB</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">19</td>
+                                                         <td class="oddData">Database Server</td>
+                                                         <td class="oddData">jgx2db04-dr</td>
+                                                         <td class="oddData">10.10.106.24</td>
+                                                         <td class="oddData"></td>
+                                                         <td class="oddData"></td>
+                                                         <td class="oddData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">18</td>
+                                                         <td class="evenData">Database Server</td>
+                                                         <td class="evenData">jgx2db03-dr</td>
+                                                         <td class="evenData">10.10.106.23</td>
+                                                         <td class="evenData"></td>
+                                                         <td class="evenData"></td>
+                                                         <td class="evenData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="oddData" scope="row">17</td>
+                                                         <td class="oddData">Database Server</td>
+                                                         <td class="oddData">jgx2db02-dr</td>
+                                                         <td class="oddData">10.10.106.22</td>
+                                                         <td class="oddData"></td>
+                                                         <td class="oddData"></td>
+                                                         <td class="oddData"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="evenData" scope="row">16</td>
+                                                         <td class="evenData">Database Server</td>
+                                                         <td class="evenData">jgx2db01-dr</td>
+                                                         <td class="evenData">10.10.106.21</td>
+                                                         <td class="evenData"></td>
+                                                         <td class="evenData"></td>
+                                                         <td class="evenData"></td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>&nbsp;</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>
+               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                  <tr>
+                     <td class="soldLineTop">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td align="left" nowrap>
+                        <h1><span class="sectionTitle">
+        Clusters Information
+       </span>
+                        </h1>
+                     </td>
+                  </tr>
+                  <tr style="page-break-after: avoid;page-break-inside: avoid">
+                     <td align="center">
+                        <table width="100%" class="clusterDetails" role="presentation">
+                           <tr>
+                              <td colspan="3">
+                                 <h2 class="head1">Cluster:c0_clusterHome</h2>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td valign="top">
+                                 <table role="presentation">
+                                    <tr>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td>
+                                          <table class="clusterInfor" width="100%" cellspacing="0" cellpadding="0" summary="Cluster general information">
+                                             <tr>
+                                                <td colspan="3">
+                                                   <h3 class="head2">Cluster Information:</h3>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Version</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>18.2.0.0.180417</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Name</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>jgx2-clustr</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Home</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>/u01/app/18.0.0.0/grid</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Inventory Location</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>/u01/app/oraInventory</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Base Dir</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>/u01/app/grid</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Client Domain</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>wmata.com</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Backup Location</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>external</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Backup Domain</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>wmata.com</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Client Scan Name</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>jgx2-scan</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Client Scan Port</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>1521</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Client Scan IPs</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>10.10.103.29<br/>10.10.103.30<br/>10.10.103.31<br/></b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Client Gateway</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>10.10.103.1</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Client Subnet Mask</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>255.255.255.0</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>WriteBack Flash Cache</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>Enabled</b>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td>
+                                          <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
+                                             <tr>
+                                                <td>
+                                                   <h4 class="head3">Cluster Owner and Groups</h4>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>
+                                                   <table width="90%" class="groups" align="center" cellspacing="0" cellpadding="0" summary="Cluster user and group information">
+                                                      <tr>
+                                                         <th scope="col">Cluster User</th>
+                                                         <th scope="col">Cluster Id</th>
+                                                         <th scope="col">Groups</th>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row">grid</td>
+                                                         <td>1000</td>
+                                                         <td>
+                                                            <table width="100%" class="usergroups" align="center" summary="Groups information">
+                                                               <tr align="center">
+                                                                  <th scope="col"><span class="grouphead">Name</span>
+                                                                  </th>
+                                                                  <th scope="col"><span class="grouphead">Id</span>
+                                                                  </th>
+                                                               </tr>
+                                                               <tr align="cetner">
+                                                                  <td scope="row"><b>oinstall</b>
+                                                                  </td>
+                                                                  <td><b>1001</b>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr align="cetner">
+                                                                  <td scope="row"><b>asmdba</b>
+                                                                  </td>
+                                                                  <td><b>1004</b>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr align="cetner">
+                                                                  <td scope="row"><b>asmoper</b>
+                                                                  </td>
+                                                                  <td><b>1005</b>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr align="cetner">
+                                                                  <td scope="row"><b>asmadmin</b>
+                                                                  </td>
+                                                                  <td><b>1006</b>
+                                                                  </td>
+                                                               </tr>
+                                                            </table>
+                                                         </td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                              <td valign="top">
+                                 <table role="presentation">
+                                    <tr>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td>
+                                          <table class="dbhome" width="100%" cellspacing="0" cellpadding="0" summary="Database general information">
+                                             <tr>
+                                                <td colspan="3">
+                                                   <h3 class="head2">Database:</h3>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Version</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>18.2.0.0.180417</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Name</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>dbm01</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Database Home</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>/u01/app/oracle/product/18.0.0.0/dbhome_1</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Inventory Location</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>/u01/app/oraInventory</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Block Size</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>8192</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Database Template</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>OLTP</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Base Dir</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b>/u01/app/oracle</b>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td nowrap align="right" scope="row"><i>Database Machines</i>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td class="dataNoWrap"><b><a href="#jgx2dbadm01">jgx2dbadm01.wmata.com</a><br><a href="#jgx2dbadm02">jgx2dbadm02.wmata.com</a><br><a href="#jgx2dbadm03">jgx2dbadm03.wmata.com</a><br><a href="#jgx2dbadm04">jgx2dbadm04.wmata.com</a><br>
+                                                   </b>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td>
+                                          <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
+                                             <tr>
+                                                <td>
+                                                   <h4 class="head3">Database Owner and Groups</h4>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>
+                                                   <table width="90%" class="groups" align="center" cellspacing="0" cellpadding="0" summary="Database user and group information">
+                                                      <tr align="center">
+                                                         <th scope="col">User</th>
+                                                         <th scope="col">ID</th>
+                                                         <th scope="col">Groups</th>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row">oracle</td>
+                                                         <td>1001</td>
+                                                         <td>
+                                                            <table width="100%" class="usergroups" align="center" summary="Database group information">
+                                                               <tr align="center">
+                                                                  <th scope="col"><span class="grouphead">Name</span>
+                                                                  </th>
+                                                                  <th scope="col"><span class="grouphead">Id</span>
+                                                                  </th>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td scope="row"><b>oinstall</b>
+                                                                  </td>
+                                                                  <td><b>1001</b>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td scope="row"><b>asmdba</b>
+                                                                  </td>
+                                                                  <td><b>1004</b>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td scope="row"><b>dba</b>
+                                                                  </td>
+                                                                  <td><b>1002</b>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td scope="row"><b>racoper</b>
+                                                                  </td>
+                                                                  <td><b>1003</b>
+                                                                  </td>
+                                                               </tr>
+                                                            </table>
+                                                         </td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                              <td valign="top">
+                                 <table role="presentation">
+                                    <tr>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td>
+                                          <table class="diskgrpname" cellspacing="0" cellpadding="0" role="presentation">
+                                             <tr>
+                                                <td colspan="3">
+                                                   <h3 class="head2">Disk Group:</h3>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>
+                                                   <table width="100%" class="groups" align="center" cellspacing="0" cellpadding="2" summary="Disk group information">
+                                                      <tr align="center">
+                                                         <th scope="col">Disk Group</th>
+                                                         <th scope="col">Redundancy</th>
+                                                         <th scope="col">Volume Size</th>
+                                                         <th scope="col">OCR/Vote</th>
+                                                         <th scope="col">Quorum</th>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row">DATA</td>
+                                                         <td>HIGH</td>
+                                                         <td>218960G (80%)</td>
+                                                         <td>Yes</td>
+                                                         <td>No</td>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row">RECO</td>
+                                                         <td>NORMAL</td>
+                                                         <td>54726G (20%)</td>
+                                                         <td>No</td>
+                                                         <td>No</td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="3">&nbsp;&nbsp;</td>
+                                             </tr>
+                                             <tr style="padding-top: 2px;">
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td colspan="2">
+                                                   <h4 class="head3">Disk Group Storage</h4>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>
+                                                   <table width="100%" class="groups" align="center" cellspacing="0" cellpadding="2" summary="disk group storage">
+                                                      <tr align="center">
+                                                         <th scope="col">Storage</th>
+                                                         <th scope="col"># of Disks</th>
+                                                         <th scope="col">Total Disk Space(G)</th>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row"><a href="#jgx2celadm01">jgx2celadm01.wmata.com</a>
+                                                         </td>
+                                                         <td>12</td>
+                                                         <td>120000</td>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row"><a href="#jgx2celadm02">jgx2celadm02.wmata.com</a>
+                                                         </td>
+                                                         <td>12</td>
+                                                         <td>120000</td>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row"><a href="#jgx2celadm03">jgx2celadm03.wmata.com</a>
+                                                         </td>
+                                                         <td>12</td>
+                                                         <td>120000</td>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row"><a href="#jgx2celadm04">jgx2celadm04.wmata.com</a>
+                                                         </td>
+                                                         <td>12</td>
+                                                         <td>120000</td>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row"><a href="#jgx2celadm05">jgx2celadm05.wmata.com</a>
+                                                         </td>
+                                                         <td>12</td>
+                                                         <td>120000</td>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row"><a href="#jgx2celadm06">jgx2celadm06.wmata.com</a>
+                                                         </td>
+                                                         <td>12</td>
+                                                         <td>120000</td>
+                                                      </tr>
+                                                      <tr align="center">
+                                                         <td scope="row"><a href="#jgx2celadm07">jgx2celadm07.wmata.com</a>
+                                                         </td>
+                                                         <td>12</td>
+                                                         <td>120000</td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr style="page-break-before: always">
+            <td>
+               <table width="100%" role="presentation">
+                  <tr>
+                     <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td class="soldLineTop">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td align="left" nowrap>
+                        <h1><span class="sectionTitle">
+            Rack Machines Overview
+          </span>
+                        </h1>
+                     </td>
+                  </tr>
+                  <tr style="page-break-before: always">
+                     <td>
+                        <table border="0" width="100%" role="presentation">
+                           <tbody>
+                              <tr>
+                                 <td>
+                                    <h2 class="head1">X7-2 Half Rack HC 10TB</h2>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td align="center">
+                                    <table class="node" align="center" width="100%" summary="Rack nodes details">
+                                       <tbody>
+                                          <tr style="background:#9c9c9c;">
+                                             <th class="node" valign="top" nowrap scope="col">Machine Type
+                          </th>
+                                             <th class="node" valign="top" nowrap scope="col">Serial Number
+                          </th>
+                                             <th class="node" valign="top" nowrap scope="col">Rack Position
+                          </th>
+                                             <th class="node" valign="top" nowrap scope="col">Server Name
+                          </th>
+                                             <th class="node" valign="top" nowrap scope="col">Mgt Name
+                            <br>IP<br>Netmask<br>Bonded
+                          </th>
+                                             <th class="node" valign="top" nowrap scope="col">Public Hostname<br>IP<br>Netmask<br>Bonded
+                          </th>
+                                             <th class="node" valign="top" nowrap scope="col">Private Name<br>IP<br>Netmask<br>Bonded
+                          </th>
+                                             <th class="node" valign="top" nowrap scope="col">ILOM Hostname<br>IP<br>Netmask
+                          </th>
+                                             <th class="node" valign="top" nowrap scope="col">VIP Name
+                            <br>IP
+                          </th>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Leaf Switch<br><br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">22</td>
+                                             <td class="node"><a name="jgx2sw-ibb01"></a>
+                                             </td>
+                                             <td class="node"><span class="grouphead">jgx2sw-ibb01</span><br>10.10.108.85<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Admin Switch<br><br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">21</td>
+                                             <td class="node"><a name="jgx2sw-adm01"></a>
+                                             </td>
+                                             <td class="node"><span class="grouphead">jgx2sw-adm01</span><br>10.10.108.83<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Leaf Switch<br><br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">20</td>
+                                             <td class="node"><a name="jgx2sw-iba01"></a>
+                                             </td>
+                                             <td class="node"><span class="grouphead">jgx2sw-iba01</span><br>10.10.108.84<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Database Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">19</td>
+                                             <td class="node"><a name="jgx2dbadm04"></a>jgx2dbadm04</td>
+                                             <td class="node"><span class="grouphead">jgx2dbadm04</span><br>10.10.108.64<br>255.255.255.0<br>No</td>
+                                             <td class="node"><span class="grouphead">jgx2db04</span><br>10.10.103.27<br>255.255.255.0<br>Yes</td>
+                                             <td class="node">jgx2db04-priv1<br><span class="grouphead">192.168.10.7</span><br>jgx2db04-priv2<br><span class="grouphead">192.168.10.8</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node"><span class="grouphead">jgx2db04-vip</span><br>10.10.103.28</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Database Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">18</td>
+                                             <td class="node"><a name="jgx2dbadm03"></a>jgx2dbadm03</td>
+                                             <td class="node"><span class="grouphead">jgx2dbadm03</span><br>10.10.108.63<br>255.255.255.0<br>No</td>
+                                             <td class="node"><span class="grouphead">jgx2db03</span><br>10.10.103.25<br>255.255.255.0<br>Yes</td>
+                                             <td class="node">jgx2db03-priv1<br><span class="grouphead">192.168.10.5</span><br>jgx2db03-priv2<br><span class="grouphead">192.168.10.6</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node"><span class="grouphead">jgx2db03-vip</span><br>10.10.103.26</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Database Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">17</td>
+                                             <td class="node"><a name="jgx2dbadm02"></a>jgx2dbadm02</td>
+                                             <td class="node"><span class="grouphead">jgx2dbadm02</span><br>10.10.108.62<br>255.255.255.0<br>No</td>
+                                             <td class="node"><span class="grouphead">jgx2db02</span><br>10.10.103.23<br>255.255.255.0<br>Yes</td>
+                                             <td class="node">jgx2db02-priv1<br><span class="grouphead">192.168.10.3</span><br>jgx2db02-priv2<br><span class="grouphead">192.168.10.4</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node"><span class="grouphead">jgx2db02-vip</span><br>10.10.103.24</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Database Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">16</td>
+                                             <td class="node"><a name="jgx2dbadm01"></a>jgx2dbadm01</td>
+                                             <td class="node"><span class="grouphead">jgx2dbadm01</span><br>10.10.108.61<br>255.255.255.0<br>No</td>
+                                             <td class="node"><span class="grouphead">jgx2db01</span><br>10.10.103.21<br>255.255.255.0<br>Yes</td>
+                                             <td class="node">jgx2db01-priv1<br><span class="grouphead">192.168.10.1</span><br>jgx2db01-priv2<br><span class="grouphead">192.168.10.2</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node"><span class="grouphead">jgx2db01-vip</span><br>10.10.103.22</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Storage Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">14</td>
+                                             <td class="node"><a name="jgx2celadm07"></a>jgx2celadm07</td>
+                                             <td class="node"><span class="grouphead">jgx2celadm07</span><br>10.10.108.71<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">jgx2cel07-priv1<br><span class="grouphead">192.168.10.21</span><br>jgx2cel07-priv2<br><span class="grouphead">192.168.10.22</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Storage Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">12</td>
+                                             <td class="node"><a name="jgx2celadm06"></a>jgx2celadm06</td>
+                                             <td class="node"><span class="grouphead">jgx2celadm06</span><br>10.10.108.70<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">jgx2cel06-priv1<br><span class="grouphead">192.168.10.19</span><br>jgx2cel06-priv2<br><span class="grouphead">192.168.10.20</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Storage Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">10</td>
+                                             <td class="node"><a name="jgx2celadm05"></a>jgx2celadm05</td>
+                                             <td class="node"><span class="grouphead">jgx2celadm05</span><br>10.10.108.69<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">jgx2cel05-priv1<br><span class="grouphead">192.168.10.17</span><br>jgx2cel05-priv2<br><span class="grouphead">192.168.10.18</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Storage Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">8</td>
+                                             <td class="node"><a name="jgx2celadm04"></a>jgx2celadm04</td>
+                                             <td class="node"><span class="grouphead">jgx2celadm04</span><br>10.10.108.68<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">jgx2cel04-priv1<br><span class="grouphead">192.168.10.15</span><br>jgx2cel04-priv2<br><span class="grouphead">192.168.10.16</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Storage Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">6</td>
+                                             <td class="node"><a name="jgx2celadm03"></a>jgx2celadm03</td>
+                                             <td class="node"><span class="grouphead">jgx2celadm03</span><br>10.10.108.67<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">jgx2cel03-priv1<br><span class="grouphead">192.168.10.13</span><br>jgx2cel03-priv2<br><span class="grouphead">192.168.10.14</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Storage Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">4</td>
+                                             <td class="node"><a name="jgx2celadm02"></a>jgx2celadm02</td>
+                                             <td class="node"><span class="grouphead">jgx2celadm02</span><br>10.10.108.66<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">jgx2cel02-priv1<br><span class="grouphead">192.168.10.11</span><br>jgx2cel02-priv2<br><span class="grouphead">192.168.10.12</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Storage Server<br>
+                                 Linux x86-64
+                               <br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">2</td>
+                                             <td class="node"><a name="jgx2celadm01"></a>jgx2celadm01</td>
+                                             <td class="node"><span class="grouphead">jgx2celadm01</span><br>10.10.108.65<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">jgx2cel01-priv1<br><span class="grouphead">192.168.10.9</span><br>jgx2cel01-priv2<br><span class="grouphead">192.168.10.10</span><br><span class="lineTop">255.255.252.0<br>
+                                                </span>Active-Active</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">Spine Switch<br><br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">1</td>
+                                             <td class="node"><a name="jgx2sw-ibs01"></a>
+                                             </td>
+                                             <td class="node"><span class="grouphead">jgx2sw-ibs01</span><br>10.10.108.88<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">PDU Switch<br><br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">0</td>
+                                             <td class="node"><a name="jgx2sw-pdua01"></a>
+                                             </td>
+                                             <td class="node"><span class="grouphead">jgx2sw-pdua01</span><br>10.10.108.86<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td class="node" scope="row">PDU Switch<br><br>
+                                             </td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">0</td>
+                                             <td class="node"><a name="jgx2sw-pdub01"></a>
+                                             </td>
+                                             <td class="node"><span class="grouphead">jgx2sw-pdub01</span><br>10.10.108.87<br>255.255.255.0<br>No</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                             <td class="node">N/A</td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><br>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td></td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr style="page-break-before: always">
+            <td align="center">
+               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                  <tr>
+                     <td class="soldLineTop">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td align="left" nowrap>
+                        <h1><span class="sectionTitle">
+      Platinum Configuration
+    </span>
+                        </h1>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td align="center">
+              Unavailable for configuration because it is disabled
+            </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr style="page-break-before: always">
+            <td align="center"></td>
+         </tr>
+         <tr style="page-break-after: avoid;page-break-inside: avoid">
+            <td align="center">
+               <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
+                  <tr>
+                     <td class="soldLineTop" colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">
+                        <h1><span class="sectionTitle">
+            Alerts
+          </span>
+                        </h1>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top">
+                        <table role="presentation">
+                           <tr>
+                              <td>&nbsp;&nbsp;</td>
+                              <td>
+                                 <table class="alertsDetails" width="100%" cellspacing="0" cellpadding="0" summary="Cell alert information">
+                                    <tr>
+                                       <td colspan="3" nowrap scope="row">
+                                          <h2 class="head2">Cell Alert Delivery Configuration</h2>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" scope="row"><i>SNMP Server</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" scope="row"><i>SNMP Port</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" scope="row"><i>SNMP Community</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td colspan="3" align="center" scope="row">
+                                          <div class="line"><span class="hide">Hide line</span>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" scope="row"><i>SMTP Server</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" scope="row"><i>SMTP Port</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" scope="row"><i>SSL</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" scope="row"><i>Email(s) to</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" scope="row"><i>Email From</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" scope="row"><i>From Name</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                     <td valign="top">
+                        <table role="presentation">
+                           <tr>
+                              <td>&nbsp;&nbsp;</td>
+                              <td>
+                                 <table class="alertsDetails" width="100%" cellspacing="0" cellpadding="0" summary="Configuration Manager information">
+                                    <tr>
+                                       <td colspan="3" scope="row">
+                                          <h2 class="head2" title="Oracle Configuration Manager Configuration">
+                          OCM Configuration
+                        </h2>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" title="My Oracle Support Email Address" scope="row"><i>MOS Email</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" title="" scope="row"><i>Support Hub Host Name</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" title="" scope="row"><i>Support Hub User Name</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" title="" scope="row"><i>HTTP Proxy Server</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" title="" scope="row"><i>HTTP Proxy Port</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td nowrap align="right" title="" scope="row"><i>HTTP Proxy User</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td nowrap><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top">
+                        <table role="presentation">
+                           <tr>
+                              <td>&nbsp;&nbsp;</td>
+                              <td>
+                                 <table class="alertsDetails" width="100%" cellspacing="0" cellpadding="0" summary="ASR configuration">
+                                    <tr>
+                                       <td colspan="3" scope="row">
+                                          <h2 class="head2" title="Auto Service Request Configuration">ASR
+                          Configuration
+                        </h2>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="lableNoWrap" align="right" title="Auto Service Request Manager Web Host Name" scope="row"><i>ASR Manager Hostname</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td class="dataNoWrap"><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="lableNoWrap" align="right" title="Auto Service Request Technical Contact Name" scope="row"><i>ASR Technical Contact Name</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td class="dataNoWrap"><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="lableNoWrap" align="right" title="Auto Service Request Technical Contact Email Address" scope="row"><i>MOS Contact Email</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td class="dataNoWrap"><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="lableNoWrap" align="right" title="My Oracle Support Account Name" scope="row"><i>MOS Account Name</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td class="dataNoWrap"><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="lableNoWrap" align="right" title="" scope="row"><i>HTTP Proxy Server</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td class="dataNoWrap"><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="lableNoWrap" align="right" title="" scope="row"><i>HTTP Proxy Port</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td class="dataNoWrap"><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="lableNoWrap" align="right" title="" scope="row"><i>HTTP Proxy User</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td class="dataNoWrap"><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                     <td valign="top">
+                        <table role="presentation">
+                           <tr>
+                              <td>&nbsp;&nbsp;</td>
+                              <td>
+                                 <table class="alertsDetails" width="100%" cellspacing="0" cellpadding="0" summary="Enterprise manager information">
+                                    <tr>
+                                       <td colspan="3" scope="row">
+                                          <h2 class="head2" title="Oracle Enterprise Manager Configuration">EM
+                          Configuration
+                        </h2>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="lableNoWrap" align="right" title="" scope="row"><i>EM Home base</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td class="dataNoWrap"><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="lableNoWrap" align="right" title="" scope="row"><i>OMS Machine</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td class="dataNoWrap"><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="lableNoWrap" align="right" title="" scope="row"><i>OMS HTTP Upload port</i>
+                                       </td>
+                                       <td>&nbsp;&nbsp;</td>
+                                       <td class="dataNoWrap"><b>N/A</b>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr style="page-break-before: always">
+            <td>
+               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                  <tr>
+                     <td colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td class="soldLineTop" colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="60%" cellspacing="0" cellpadding="0" role="presentation">
+                           <tr>
+                              <td align="left" nowrap>
+                                 <h1><span class="sectionTitle">
+          Appendix A: Network Names and IPs
+         </span>
+                                 </h1>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td><span class="head4">Total Network IPs: 65</span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="40%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td>
+                                 <h2 class="head4">Admin Network: (17)</h2>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="Admin Network: (17)">
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.61</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm01</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm01.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.62</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm02</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm02.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.63</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm03</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm03.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.64</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm04</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm04.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.65</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm01</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm01.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.66</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm02</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm02.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.67</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm03</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm03.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.68</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm04</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm04.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.69</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm05</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm05.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.70</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm06</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm06.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.71</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm07</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm07.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.83</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-adm01</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-adm01.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.84</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-iba01</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-iba01.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.85</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-ibb01</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-ibb01.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.86</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-pdua01</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-pdua01.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.87</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-pdub01</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-pdub01.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.88</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-ibs01</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2sw-ibs01.wmata.com</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="endSectionTitle">&nbsp;</span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="40%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td>
+                                 <h2 class="head4">ILOM Network: (11)</h2>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="ILOM Network: (11)">
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.72</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm01-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm01-ilom.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.73</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm02-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm02-ilom.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.74</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm03-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm03-ilom.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.75</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm04-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2dbadm04-ilom.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.76</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm01-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm01-ilom.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.77</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm02-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm02-ilom.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.78</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm03-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm03-ilom.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.79</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm04-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm04-ilom.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.80</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm05-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm05-ilom.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.81</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm06-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm06-ilom.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.108.82</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm07-ilom</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2celadm07-ilom.wmata.com</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="endSectionTitle">&nbsp;</span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="40%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td>
+                                 <h2 class="head4">Client Network: (4)</h2>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="Client Network: (4)">
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.21</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db01</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db01.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.23</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db02</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db02.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.25</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db03</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db03.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.27</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db04</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db04.wmata.com</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="endSectionTitle">&nbsp;</span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="40%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td>
+                                 <h2 class="head4">VIP Network: (4)</h2>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="VIP Network: (4)">
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.22</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db01-vip</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db01-vip.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.24</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db02-vip</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db02-vip.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.26</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db03-vip</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db03-vip.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.28</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db04-vip</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db04-vip.wmata.com</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="endSectionTitle">&nbsp;</span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="40%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td>
+                                 <h2 class="head4">Client SCAN IPs: (3)</h2>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="Client SCAN IPs: (3)">
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.29</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2-scan</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2-scan.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.30</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2-scan</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2-scan.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.103.31</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2-scan</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2-scan.wmata.com</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="endSectionTitle">&nbsp;</span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="40%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td>
+                                 <h2 class="head4">Private Network: (22)</h2>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="Private Network: (22)">
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db01-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db01-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db01-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db01-priv2.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.3</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db02-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db02-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.4</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db02-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db02-priv2.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.5</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db03-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db03-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.6</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db03-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db03-priv2.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.7</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db04-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db04-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.8</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db04-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db04-priv2.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.9</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel01-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel01-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.10</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel01-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel01-priv2.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.11</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel02-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel02-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.12</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel02-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel02-priv2.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.13</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel03-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel03-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.14</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel03-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel03-priv2.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.15</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel04-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel04-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.16</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel04-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel04-priv2.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.17</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel05-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel05-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.18</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel05-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel05-priv2.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.19</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel06-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel06-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.20</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel06-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel06-priv2.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.21</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel07-priv1</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel07-priv1.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>192.168.10.22</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel07-priv2</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2cel07-priv2.wmata.com</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="endSectionTitle">&nbsp;</span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="40%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td>
+                                 <h2 class="head4">Backup Network: (4)</h2>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="Backup Network: (4)">
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.106.21</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db01-dr</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db01-dr.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.106.22</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db02-dr</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db02-dr.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.106.23</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db03-dr</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db03-dr.wmata.com</td>
+                                    </tr>
+                                    <tr>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" scope="row" nowrap>10.10.106.24</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db04-dr</td>
+                                       <td style="background-color:#ebebeb; padding-right: 20px;" align="left" nowrap>jgx2db04-dr.wmata.com</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="endSectionTitle">&nbsp;</span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="40%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                           <tr>
+                              <td>
+                                 <h2 class="head4">Backup SCAN IPs: (0)</h2>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <table width="100%" cellspacing="0" cellpadding="0" border="0" summary="Backup SCAN IPs: (0)">
+                                    <tr>
+                                       <td scope="row">No Data</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" xmlns:xsltutils="http://www.oracle.com/XSL/Transform/java/oracle.onecommand.deploy.software.XSLTUtils">
+                  <tr>
+                     <td colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td class="soldLineTop" colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="70%" cellspacing="0" cellpadding="0" role="presentation">
+                           <tr>
+                              <td align="left" nowrap>
+                                 <h1><span class="sectionTitle">
+                Appendix B: Required Files and Patches
+              </span>
+                                 </h1><span class="endSectionNormalTitle">Download the following files from MOS into the Oracle Exadata Deployment Assistant's WorkDir directory</span><span class="endSectionTitle"><br>&nbsp;</span>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <table width="40%" cellspacing="0" cellpadding="0" border="0" summary="Required downloading files">
+                           <tr>
+                              <td style="background-color:#ebebeb" align="left" nowrap scope="row">V974952-01.zip</td>
+                           </tr>
+                           <tr>
+                              <td style="background-color:#ebebeb" align="left" nowrap scope="row">V974953-01.zip</td>
+                           </tr>
+                           <tr>
+                              <td style="background-color:#ebebeb" align="left" nowrap scope="row">p27463879_182000ACFSRU_Linux-x86-64.zip</td>
+                           </tr>
+                           <tr>
+                              <td style="background-color:#ebebeb" align="left" nowrap scope="row">p27636900_180000_Linux-x86-64.zip</td>
+                           </tr>
+                           <tr>
+                              <td style="background-color:#ebebeb" align="left" nowrap scope="row">p27681568_180000_Linux-x86-64.zip</td>
+                           </tr>
+                           <tr>
+                              <td style="background-color:#ebebeb" align="left" nowrap scope="row">p6880880_122010_Linux-x86-64.zip</td>
+                           </tr>
+                           <tr>
+                              <td style="background-color:#ebebeb" align="left" nowrap scope="row">exachk.zip</td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">&nbsp;&nbsp;</td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td id="footer"><img class="imgindent" src="http://www.oracleimg.com/ocom/groups/public/@ocom/documents/digitalasset/196877.gif" alt="Hardware and Software Engineered to Work Together" align="left">
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

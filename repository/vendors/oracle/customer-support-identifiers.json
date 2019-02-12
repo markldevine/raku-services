@@ -1,0 +1,22 @@
+{
+  "caption": "Oracle Customer Support Identifiers",
+  "tbody": [
+    {
+      "customer-support-identifier": "21810188",
+      "product-name": "Exadata X7-2"
+    },
+    {
+      "customer-support-identifier": "21810189",
+      "product-name": "ZDLRA X7"
+    }
+  ],
+  "tfoot": [],
+  "thead": [
+    {
+      "customer-support-identifier": "Identifier"
+    },
+    {
+      "product-name": "Product"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "back-end": {
+    "source": "file:///repository/vendors/oracle/engineered-systems.json?format=json&provides=html-table-data"
+  },
+  "front-end": {
+    "div-default-css": "/assets/css/nfl"
+  }
+}

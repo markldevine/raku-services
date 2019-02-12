@@ -1,0 +1,26 @@
+body {
+    background-color: #97233F;
+    font-family: courier;
+    color: #FFB612;
+}
+caption {
+    font-size: 150%;
+    font-weight: bold;
+}
+table {
+    table-layout: auto;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #000000;
+}
+tr {
+    border: 1px solid #000000;
+}
+td {
+    border: 1px solid #000000;
+}
+th {
+    border: 1px solid #000000;
+    font-size: 110%;
+}

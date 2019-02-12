@@ -1,0 +1,8 @@
+{
+  "back-end": {
+    "source": "file:///repository/wmata/itio/dci/technical-services/staff.json?format=json&provides=html-table-data"
+  },
+  "front-end": {
+    "div-default-css": "/assets/css/nfl"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "caption": "Oracle Contacts",
+  "tbody": [
+    {
+      "vendor-name": "Anderson, Gerry",
+      "title": "Cloud Platform Sales Manager",
+      "scope": "Oracle Public Sector | DC, MD",
+      "internet-email-address": "gerry.anderson@oracle.com",
+      "mobile-telephone": "301/807-1718",
+      "office-telephone": "",
+      "wmata-badge-id": ""
+    },
+    {
+      "vendor-name": "Karwoski, John",
+      "title": "Master Principal Sales Engineer",
+      "scope": "North America Cloud and Infrastructure Solutions",
+      "internet-email-address": "john.karwoski@oracle.com",
+      "mobile-telephone": "610/608-5800",
+      "office-telephone": "610/729-3320",
+      "wmata-badge-id": ""
+    }
+  ],
+  "tfoot": [],
+  "thead": [
+    { "vendor-name": "Vendor Name"                  },
+    { "title": "Title"                              },
+    { "scope": "Role/Scope"                         },
+    { "internet-email-address": "Internet Email"    },
+    { "mobile-telephone": "Mobile Telephone"        },
+    { "office-telephone": "Office Telephone"        },
+    { "wmata-badge-id": "WMATA Badge"               }
+  ]
+}
